@@ -8,7 +8,7 @@ if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
     Please make a new directory (called a build directory) and run CMake from there.
     You may need to remove CMakeCache.txt." )
 endif()
-
+# test
 
 # Output binaries to a sub directory "bin"
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -22,6 +22,13 @@ message(STATUS "Boost version: ${Boost_VERSION}")
 include_directories(include)
 
 # Update name and srcs
+add_library(http_server src/http_server.cc)
+add_library(http_session src/http_session.cc)
+target_link_libraries(http_server http_session)
+
+
+# Update name and srcs
 add_executable(server src/server_main.cc)
+target_link_libraries(server http_server)
 
 
