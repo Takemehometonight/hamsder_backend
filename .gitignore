@@ -3,3 +3,7 @@
 build
 build_*
 mirror
+<<<<<<< HEAD
+=======
+.gitconfig
+>>>>>>> ab26453 (refactored server skeleton and added shared directory to development environment)

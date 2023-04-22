@@ -3,8 +3,14 @@
 FROM cs130/devel:stable
 
 # Set /usr/src/projects as the working directory
+<<<<<<< HEAD
 COPY . /usr/src/projects/hamsder_backend
 WORKDIR /usr/src/projects/hamsder_backend
+=======
+WORKDIR /usr/src/projects
+VOLUME /usr/src/projects/hamsder_backend
+COPY . /usr/src/projects/hamsder_backend
+>>>>>>> ab26453 (refactored server skeleton and added shared directory to development environment)
 
 # # Install required packages and libraries
 RUN apt-get update && apt-get install -y \
