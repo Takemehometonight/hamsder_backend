@@ -22,6 +22,13 @@ message(STATUS "Boost version: ${Boost_VERSION}")
 include_directories(include)
 
 # Update name and srcs
+add_library(http_server src/http_server.cc)
+add_library(http_session src/http_session.cc)
+target_link_libraries(http_server http_session)
+
+
+# Update name and srcs
 add_executable(server src/server_main.cc)
+target_link_libraries(server http_server)
 
 
