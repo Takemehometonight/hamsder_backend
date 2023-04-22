@@ -1,7 +1,12 @@
-# Use an official image of Ubuntu 20.04 as the base image
-FROM ubuntu:jammy as base
+# # Use an official image of Ubuntu 20.04 as the base image
+# FROM ubuntu:jammy as base
+FROM cs130/devel:stable
 
-# Install required packages and libraries
+# Set /usr/src/projects as the working directory
+COPY . /usr/src/projects/hamsder_backend
+WORKDIR /usr/src/projects/hamsder_backend
+
+# # Install required packages and libraries
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
@@ -10,4 +15,3 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libmysqlcppconn-dev \
     pkg-config
-
