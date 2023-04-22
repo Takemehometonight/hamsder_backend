@@ -8,7 +8,7 @@ if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
     Please make a new directory (called a build directory) and run CMake from there.
     You may need to remove CMakeCache.txt." )
 endif()
-
+# test
 
 # Output binaries to a sub directory "bin"
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
